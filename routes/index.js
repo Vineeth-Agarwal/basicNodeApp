@@ -34,9 +34,27 @@ User.find({},function(err,results){
 })
 });
 
-// update user
-router.post('/updateUser', function (req, res, next) {
-
+//last record
+router.get('/getUserLast',
+function (req,
+res, next) {
+User.find({},function(err,results){
+var lastRecord
+// console.log(results.length);
+if(results.length>0)
+{
+lastRecord=results[results.length-1]
+}
+if (err) {
+res.status(403).json({
+msg: "something bad",
+err })
+}
+else {
+res.status(200).json({
+msg: "user record fetched successfully",data:lastRecord })
+}
+})
 });
 
 module.exports = router;
