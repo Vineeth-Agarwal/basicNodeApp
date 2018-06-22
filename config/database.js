@@ -9,7 +9,7 @@ const mongoose = require("mongoose")
 
 // })
 
-module.exports = mongoose.connect("mongodb+srv://vineeth:fAzlIxXTBGrEHUBD@cluster0-zlyhn.mongodb.net/test?retryWrites=true")
+module.exports = mongoose.connect("mongodb+srv://vineeth:fAzlIxXTBGrEHUBD@cluster0-zlyhn.mongodb.net/test?retryWrites=true")    
     .then(() => {
         console.log("DB connected")
     }, err => {
